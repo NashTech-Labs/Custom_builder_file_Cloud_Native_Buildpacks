@@ -1,0 +1,26 @@
+# Buildpacks to include in builder
+[[buildpacks]]
+ 
+uri = "<path/to/your/buildpack/directory>"
+ 
+[[order]]
+[[order.group]]
+id = "app/node-js"
+version = "0.0.1"
+ 
+[build]
+image = "sample-custom-build:jammy"
+ 
+[run]
+[[run.images]]
+ 
+image = "sample-custom-run:jammy"
+mirrors = ["username/image:tag"]
+ 
+[stack]
+id = "io.buildpacks.stacks.jammy.dct"
+ 
+run-image = "sample-custom-run:jammy"
+run-image-mirrors = ["username/image:tag"]
+ 
+build-image = "sample-custom-build:jammy"
